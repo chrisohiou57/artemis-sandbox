@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: artemis-console-svc
+  namespace: soapdemo
+spec:
+  selector:
+    # The first broker pod created by the operator will always have this name.
+    # If we point the service at both pods we'll get logged out when requests bounce between them.
+    statefulset.kubernetes.io/pod-name: ex-aao-ss-0
+  type: NodePort
+  ports:
+    - name: http
+      port: 8161
+      targetPort: 8161
+      protocol: TCP

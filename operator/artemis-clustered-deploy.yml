@@ -4,10 +4,12 @@ metadata:
   name: ex-aao
 spec:
   deploymentPlan:
-    size: 1
+    size: 2
     # image: quay.io/artemiscloud/activemq-artemis-broker-kubernetes:latest
     image: chriaass/activemq-artemis-broker-kubernetes:latest
     initImage: chriaass/artemis-basic-init
     enableMetricsPlugin: true
-  adminUser: admin
-  adminPassword: password
+  # adminUser: admin
+  # adminPassword: password
+  # console:
+  #   useClientAuth: false
